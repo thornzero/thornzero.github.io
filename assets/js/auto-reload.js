@@ -1,5 +1,4 @@
-<script>
-  setInterval(() => {
+setInterval(() => {
     fetch(window.location.href, { cache: "no-store" })
       .then((res) => res.text())
       .then((text) => {
@@ -10,4 +9,3 @@
         }
       });
   }, 15000); // every 15 seconds
-</script>
