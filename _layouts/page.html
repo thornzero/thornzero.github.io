@@ -1,0 +1,12 @@
+---
+layout: page
+---
+
+{{ content }}
+
+<!-- Auto-reload for GitHub Pages -->
+{% if jekyll.environment == "production" %}
+<script>
+(function(){'use strict';const e=3e4,t="/build-timestamp.txt";let n=null,o=null;function l(){return fetch(t+"?v="+Date.now()).then(e=>e.text()).catch(()=>null)}function c(){l().then(e=>{e&&n&&e!==n?(console.log("Site updated! Reloading..."),function(){const e=document.createElement("div");e.innerHTML='<div style="position:fixed;top:20px;right:20px;background:#4CAF50;color:white;padding:15px 20px;border-radius:5px;z-index:10000;font-family:Arial,sans-serif;box-shadow:0 4px 6px rgba(0,0,0,0.1)">🔄 Site updated! Reloading in 2 seconds...</div>',document.body.appendChild(e)}(),setTimeout(()=>window.location.reload(),2e3)):e&&!n&&(n=e,console.log("Auto-reload initialized"))})}function i(){if("localhost"===window.location.hostname||"127.0.0.1"===window.location.hostname)return;l().then(t=>{t&&(n=t,o=setInterval(c,e),console.log("Auto-reload active - checking every",e/1e3,"seconds"))})}"loading"===document.readyState?document.addEventListener("DOMContentLoaded",i):i(),window.addEventListener("beforeunload",()=>{o&&clearInterval(o)})})();
+</script>
+{% endif %} 

@@ -50,6 +50,10 @@ jobs:
         env:
           JEKYLL_ENV: "production"
 
+      - name: Generate build timestamp for auto-reload
+        run: |
+          echo "$(date -u '+%Y-%m-%d %H:%M:%S UTC') - Build ${{ github.run_number }}" > "_site${{ steps.pages.outputs.base_path }}/build-timestamp.txt"
+
       - name: Test site
         run: |
           bundle exec htmlproofer _site \
